@@ -30,7 +30,7 @@
 			    <br>
 			    <input type="text" class="form-control" id="answer1" placeholder="Yo answer dude">
 			    <br>
-			    <button class="btn btn-default" type="button" onclick="theAnswer1();">Click da Thing</button>
+			    <button class="btn btn-default" type="button" onclick="theAnswer('answer1','question1');">Click da Thing</button>
 			  </div>
 			</form>
 		</div>
@@ -41,7 +41,7 @@
 			    <br>
 			    <input type="text" class="form-control" id="answer2" placeholder="Your answer bro">
 			    <br>
-			    <button class="btn btn-primary" type="button" onclick="theAnswer2();">Click da Thing</button>
+			    <button class="btn btn-primary" type="button" onclick="theAnswer('answer2', 'question2');">Click da Thing</button>
 			  </div>
 			</form>
 		</div>
@@ -52,7 +52,7 @@
 			    <br>
 			    <input type="text" class="form-control" id="answer3" placeholder="Yo answer yo!?!">
 			    <br>
-			    <button class="btn btn-danger" type="button" onclick="theAnswer3();">Click da Thing</button>
+			    <button class="btn btn-danger" type="button" onclick="theAnswer('answer3', 'question3');">Click da Thing</button>
 			  </div>
 			</form>
 		</div>
@@ -63,7 +63,7 @@
 <br>
 <br>
 <form>
-	<button type="submit">RESET the PAGE!!!</button>
+	<button type="button" onClick="refresh();">RESET the PAGE!!!</button>
 </form>
 
 <script type="text/javascript" src="js/app.js"></script>

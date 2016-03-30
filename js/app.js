@@ -68,10 +68,12 @@ var a = Math.floor((Math.random() * theLength)),
 	b = number1(),
 	c = number2();
 	problemsArray = [problems[a].question, problems[b].question, problems[c].question];
+	answerArray = [problems[a].answer, problems[b].answer, problems[c].answer];
 
 //Logging Three Different Random Numbers to Console
 console.log(a + " " + b + " " + c)
 console.log(problemsArray)
+console.log(answerArray)
 
 //Declaring Variables for Question Function
 var nId = "question1"
@@ -80,7 +82,9 @@ var d = "2"
 //Function that puts question into lable tag
 function theQuestion() {
 	for(i = 0; i < problemsArray.length; i++) {
-		document.getElementById(nId).innerHTML = problemsArray[i];
+		var target = document.getElementById(nId);
+		target.innerHTML = problemsArray[i];
+		target.value = answerArray[i];
 		nId = nId.slice(0, nId.length - 1);
 		nId = nId + d;
 		d = (Number(d) + 1).toString();
@@ -91,10 +95,8 @@ function theQuestion() {
 }
 theQuestion();
 
-//Declaring Array Variable of Answers
-var answerArray = [problems[a].answer, problems[b].answer, problems[c].answer];
-
 //Separate Functions to Determine if Answer is Correct
+/*
 function theAnswer1() {
 	var yourAnswer = document.getElementById("answer1").value.toLowerCase();
 	if(yourAnswer === problems[a].answer) {
@@ -124,4 +126,21 @@ function theAnswer3() {
 		alert("Nope...")
 	}
 }
+*/
 
+//One function to determine if answer is correct
+
+function theAnswer(ID, id) {
+	var yourAnswer = document.getElementById(ID).value.toLowerCase(),
+		theAnswer = document.getElementById(id).value;
+	if(yourAnswer === theAnswer) {
+		alert("You solved the puzzle bro!!!");
+	}
+	else {
+		alert("Nope...")
+	}
+}
+
+function refresh() {
+	window.location.reload(true);
+}
